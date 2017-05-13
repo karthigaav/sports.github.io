@@ -54,6 +54,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player"/>
     </owl:Class>
     
@@ -62,6 +68,14 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballTeam">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
     </owl:Class>
     
@@ -70,6 +84,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player"/>
     </owl:Class>
     
@@ -78,6 +98,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerPlayer -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerPlayer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player"/>
     </owl:Class>
     
@@ -86,6 +112,14 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerTeam">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
     </owl:Class>
     
@@ -94,6 +128,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#employs"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
     </owl:Class>
     
@@ -102,6 +142,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player"/>
     </owl:Class>
     
@@ -110,7 +156,29 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#employs"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BostonC -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BostonC">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CCSU -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CCSU">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam"/>
     </owl:Class>
     
 
@@ -118,7 +186,32 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam">
-        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CCSU"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HartfordU"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#UCONN"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HartfordU -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HartfordU">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HarvardU -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HarvardU">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam"/>
     </owl:Class>
     
 
@@ -126,7 +219,16 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam">
-        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BostonC"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HarvardU"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SpringfieldC"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ValuePartition"/>
     </owl:Class>
     
 
@@ -134,7 +236,15 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#NewEnglandSoccerTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#NewEnglandSoccerTeam">
-        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam"/>
+                    <rdf:Description rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam"/>
     </owl:Class>
     
 
@@ -148,6 +258,12 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player"/>
     </owl:Class>
     
@@ -156,7 +272,21 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#employs"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SpringfieldC -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SpringfieldC">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam"/>
     </owl:Class>
     
 
@@ -164,6 +294,143 @@
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team -->
 
     <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team"/>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#UCONN -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#UCONN">
+        <rdfs:subClassOf rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam"/>
+    </owl:Class>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ValuePartition -->
+
+    <owl:Class rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ValuePartition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP1">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP1">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP1">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Arsenal -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Arsenal">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerTeam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Barcelona -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Barcelona">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP1">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ChicagoCubs -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ChicagoCubs">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP1 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP1">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#TampaBayRays -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#TampaBayRays">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballTeam"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
