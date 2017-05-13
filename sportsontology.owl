@@ -378,6 +378,14 @@
     
 
 
+    <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Arsenal2 -->
+
+    <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Arsenal2">
+        <rdf:type rdf:resource="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Barcelona -->
 
     <owl:NamedIndividual rdf:about="https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Barcelona">
