@@ -1,0 +1,272 @@
+@prefix : <https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl> .
+
+<https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#employs
+:employs rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         owl:inverseOf :playsFor .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#playsFor
+:playsFor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Player ;
+          rdfs:range :Team .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballPlayer
+:AllStarBaseballPlayer rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty :playsFor ;
+                                             owl:someValuesFrom :AllStarBaseballTeam
+                                           ] ;
+                       rdfs:subClassOf :Player .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballTeam
+:AllStarBaseballTeam rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( :AllStarTeam
+                                                                :BaseballTeam
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Team .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarPlayer
+:AllStarPlayer rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :playsFor ;
+                                     owl:someValuesFrom :AllStarTeam
+                                   ] ;
+               rdfs:subClassOf :Player .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerPlayer
+:AllStarSoccerPlayer rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :playsFor ;
+                                           owl:someValuesFrom :AllStarSoccerTeam
+                                         ] ;
+                     rdfs:subClassOf :Player .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerTeam
+:AllStarSoccerTeam rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( :AllStarTeam
+                                                              :SoccerTeam
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   rdfs:subClassOf :Team .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarTeam
+:AllStarTeam rdf:type owl:Class ;
+             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                   owl:onProperty :employs ;
+                                   owl:someValuesFrom :AllStarPlayer
+                                 ] ;
+             rdfs:subClassOf :Team .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballPlayer
+:BaseballPlayer rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :playsFor ;
+                                      owl:someValuesFrom :BaseballTeam
+                                    ] ;
+                rdfs:subClassOf :Player .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballTeam
+:BaseballTeam rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :employs ;
+                                    owl:someValuesFrom :BaseballPlayer
+                                  ] ;
+              rdfs:subClassOf :Team .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BostonC
+:BostonC rdf:type owl:Class ;
+         rdfs:subClassOf :MASoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CCSU
+:CCSU rdf:type owl:Class ;
+      rdfs:subClassOf :CTSoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#CTSoccerTeam
+:CTSoccerTeam rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :CCSU
+                                                  :HartfordU
+                                                  :UCONN
+                                                )
+                                  ] ;
+              rdfs:subClassOf :ValuePartition .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HartfordU
+:HartfordU rdf:type owl:Class ;
+           rdfs:subClassOf :CTSoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#HarvardU
+:HarvardU rdf:type owl:Class ;
+          rdfs:subClassOf :MASoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#MASoccerTeam
+:MASoccerTeam rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :BostonC
+                                                  :HarvardU
+                                                  :SpringfieldC
+                                                )
+                                  ] ;
+              rdfs:subClassOf :ValuePartition .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#NewEnglandSoccerTeam
+:NewEnglandSoccerTeam rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:unionOf ( :CTSoccerTeam
+                                                          :MASoccerTeam
+                                                        )
+                                          ] ;
+                      rdfs:subClassOf :SoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Player
+:Player rdf:type owl:Class .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerPlayer
+:SoccerPlayer rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :playsFor ;
+                                    owl:someValuesFrom :SoccerTeam
+                                  ] ;
+              rdfs:subClassOf :Player .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerTeam
+:SoccerTeam rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty :employs ;
+                                  owl:someValuesFrom :SoccerPlayer
+                                ] ;
+            rdfs:subClassOf :Team .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SpringfieldC
+:SpringfieldC rdf:type owl:Class ;
+              rdfs:subClassOf :MASoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Team
+:Team rdf:type owl:Class .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#UCONN
+:UCONN rdf:type owl:Class ;
+       rdfs:subClassOf :CTSoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ValuePartition
+:ValuePartition rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP1
+:AllStarBaseballP1 rdf:type owl:NamedIndividual ,
+                            :AllStarBaseballPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarBaseballP2
+:AllStarBaseballP2 rdf:type owl:NamedIndividual ,
+                            :AllStarBaseballPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP1
+:AllStarP1 rdf:type owl:NamedIndividual ,
+                    :AllStarPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarP2
+:AllStarP2 rdf:type owl:NamedIndividual ,
+                    :AllStarPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP1
+:AllStarSoccerP1 rdf:type owl:NamedIndividual ,
+                          :AllStarSoccerPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#AllStarSoccerP2
+:AllStarSoccerP2 rdf:type owl:NamedIndividual ,
+                          :AllStarSoccerPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Arsenal
+:Arsenal rdf:type owl:NamedIndividual ,
+                  :AllStarSoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#Barcelona
+:Barcelona rdf:type owl:NamedIndividual ,
+                    :SoccerTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP1
+:BaseballP1 rdf:type owl:NamedIndividual ,
+                     :BaseballPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#BaseballP2
+:BaseballP2 rdf:type owl:NamedIndividual ,
+                     :BaseballPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#ChicagoCubs
+:ChicagoCubs rdf:type owl:NamedIndividual ,
+                      :BaseballTeam .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP1
+:SoccerP1 rdf:type owl:NamedIndividual ,
+                   :SoccerPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#SoccerP2
+:SoccerP2 rdf:type owl:NamedIndividual ,
+                   :SoccerPlayer .
+
+
+###  https://github.com/karthigaav/sports.github.io/blob/master/sportsontology.owl#TampaBayRays
+:TampaBayRays rdf:type owl:NamedIndividual ,
+                       :AllStarBaseballTeam .
+
+
+###  Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi
